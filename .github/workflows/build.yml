@@ -32,6 +32,7 @@ jobs:
         run: |
           pnpm install
           pnpm build
+          mv build html
 
       -
         name: Deploy Tserver
@@ -44,3 +45,4 @@ jobs:
           rm: true
           source: "./build/*"
           target: "/var/www/html"
+          strip_components: 1
