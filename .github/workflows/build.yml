@@ -42,5 +42,6 @@ jobs:
           key: ${{ secrets.T_KEY }}
           port: ${{ secrets.PORT }}
           rm: true
-          source: "./build/*"
+          source: "build/"
+          strip_components: 1
           target: "/var/www/html"
