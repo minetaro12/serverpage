@@ -1,0 +1,45 @@
+name: Build and Deploy
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: checkout
+        uses: actions/checkout@v3
+
+      -
+        name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - 
+        uses: pnpm/action-setup@v2
+        name: Install pnpm
+        with:
+          run_install: false
+
+      -
+        name: Install and Build
+        run: |
+          pnpm install
+          pnpm build
+
+      -
+        name: Deploy Tserver
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.T_HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.T_KEY }}
+          port: ${{ secrets.PORT }}
+          rm: true
+          source: "./build"
+          target: "/var/www/html"
