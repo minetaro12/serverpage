@@ -9,7 +9,7 @@
 
 <svelte:head>
   <title>minetaro12 server</title>
-  <link rel="icon" href="https://0sn.net/favicon.ico" />
+  <link rel="icon" href="/favicon.ico" />
 </svelte:head>
 
 <Header />
