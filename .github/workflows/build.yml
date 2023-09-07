@@ -45,3 +45,16 @@ jobs:
           source: "build/"
           strip_components: 1
           target: "/var/www/html"
+
+      -
+        name: Deploy Oserver
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.O_HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.O_KEY }}
+          port: ${{ secrets.PORT }}
+          rm: true
+          source: "build/"
+          strip_components: 1
+          target: "/var/www/html"
