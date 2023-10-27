@@ -23,6 +23,9 @@ devDependencies:
   '@typescript-eslint/parser':
     specifier: ^6.9.0
     version: 6.9.0(eslint@8.52.0)(typescript@5.2.2)
+  '@xz/fonts':
+    specifier: ^1.0.2
+    version: 1.0.2
   eslint:
     specifier: ^8.52.0
     version: 8.52.0
@@ -616,6 +619,10 @@ packages:
 
   /@ungap/structured-clone@1.2.0:
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
+    dev: true
+
+  /@xz/fonts@1.0.2:
+    resolution: {integrity: sha512-eSab91LGnuGaNRsAs+MB3H2LEoNzsu4ORmKOCbZtsAZhbGOktMZP13mDmyiNvNEXMqQtgdadCCp6vhBbnXXi1g==}
     dev: true
 
   /acorn-jsx@5.3.2(acorn@8.10.0):

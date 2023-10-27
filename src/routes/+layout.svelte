@@ -1,17 +1,45 @@
 <script lang="ts">
+  import Head from "$lib/Head.svelte";
   import Header from "$lib/Header.svelte";
   import Footer from "$lib/Footer.svelte";
 
+  export let data;
+
   // スタイルの読み込み
   import "@exampledev/new.css";
-  import "../app.scss";
+  import "@xz/fonts/serve/inter.css";
+
+  import { fly } from "svelte/transition";
 </script>
 
-<svelte:head>
-  <title>minetaro12 server</title>
-  <link rel="icon" href="/favicon.ico" />
-</svelte:head>
+<!-- タイトルのリフレッシュ -->
+{#key data.pathname}
+  <Head />
+{/key}
 
-<Header />
-<slot />
-<Footer />
+<div id="wrapper">
+  <Header />
+  {#key data.pathname}
+    <main in:fly={{ delay: 200, x: -200 }} out:fly={{ duration: 200, x: 200 }}>
+      <slot />
+    </main>
+  {/key}
+  <Footer />
+</div>
+
+<style lang="scss">
+  :global(body) {
+    height: 100svh;
+    box-sizing: border-box;
+  }
+
+  #wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    main {
+      flex: 1;
+    }
+  }
+</style>
