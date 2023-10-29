@@ -7,13 +7,17 @@
   <h1>{$page.url.hostname.toUpperCase()}</h1>
   <nav>
     {#each config.nav as item}
-      <a href={item.path} class="nav-item">{item.name}</a>
+      {#if $page.url.pathname === item.path}
+        <span class="nav-item">{item.name}</span>
+      {:else}
+        <a href={item.path} class="nav-item">{item.name}</a>
+      {/if}
     {/each}
   </nav>
 </header>
 
 <style lang="scss">
-.nav-item {
-  margin-right: 10px;
-}
+  .nav-item {
+    margin-right: 10px;
+  }
 </style>

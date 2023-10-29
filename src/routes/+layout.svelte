@@ -20,7 +20,7 @@
 <div id="wrapper">
   <Header />
   {#key data.pathname}
-    <main in:fly={{ delay: 200, x: -200 }} out:fly={{ duration: 200, x: 200 }}>
+    <main in:fly={{ delay: 200, x: 200 }} out:fly={{ duration: 200, x: -200 }}>
       <slot />
     </main>
   {/key}
