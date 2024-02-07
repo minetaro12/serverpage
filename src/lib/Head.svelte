@@ -3,13 +3,11 @@
   export let title: string | undefined = "";
   let outTitle: string;
 
-  // $: {
-    if (title) {
-      outTitle = `${title} | ${config.title}`;
-    } else {
-      outTitle = config.title;
-    }
-  // }
+  if (title) {
+    outTitle = `${title} | ${config.title}`;
+  } else {
+    outTitle = config.title;
+  }
 </script>
 
 <svelte:head>
