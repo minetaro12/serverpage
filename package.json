@@ -15,17 +15,17 @@
 		"@sveltejs/adapter-auto": "^2.1.1",
 		"@sveltejs/adapter-static": "^2.0.3",
 		"@sveltejs/kit": "^1.30.3",
-		"@typescript-eslint/eslint-plugin": "^6.16.0",
-		"@typescript-eslint/parser": "^6.16.0",
+		"@typescript-eslint/eslint-plugin": "^6.21.0",
+		"@typescript-eslint/parser": "^6.21.0",
 		"@xz/fonts": "^1.0.2",
 		"eslint": "^8.56.0",
 		"eslint-plugin-svelte": "^2.35.1",
-		"sass": "^1.69.5",
-		"svelte": "^4.2.8",
-		"svelte-check": "^3.6.2",
+		"sass": "^1.70.0",
+		"svelte": "^4.2.10",
+		"svelte-check": "^3.6.3",
 		"tslib": "^2.6.2",
 		"typescript": "^5.3.3",
-		"vite": "^4.5.1"
+		"vite": "^4.5.2"
 	},
 	"type": "module"
 }
