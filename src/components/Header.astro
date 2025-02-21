@@ -11,7 +11,7 @@ const navItems = [
   <nav>
     {
       navItems.map((item) => {
-        if (item.href === Astro.originPathname) {
+        if (item.href === Astro.url.pathname) {
           return <span>{item.text}</span>;
         } else {
           return <a href={item.href}>{item.text}</a>;
