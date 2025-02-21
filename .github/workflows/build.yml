@@ -21,7 +21,7 @@ jobs:
           node-version: 20
 
       - 
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v4
         name: Install pnpm
         with:
           version: latest
@@ -42,7 +42,7 @@ jobs:
           key: ${{ secrets.T_KEY }}
           port: ${{ secrets.PORT }}
           rm: true
-          source: "build/"
+          source: "dist/"
           strip_components: 1
           target: "/var/www/html"
 
@@ -55,6 +55,6 @@ jobs:
           key: ${{ secrets.O_KEY }}
           port: ${{ secrets.PORT }}
           rm: true
-          source: "build/"
+          source: "dist/"
           strip_components: 1
           target: "/var/www/html"

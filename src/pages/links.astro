@@ -1,0 +1,27 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const links = [
+  { name: "Web", url: "https://0sn.net", linkName: "0sn.net" },
+  {
+    name: "GitHub",
+    url: "https://github.com/minetaro12",
+    linkName: "minetaro12",
+  },
+];
+---
+
+<Layout>
+  <h3>リンク集</h3>
+  <ul>
+    {
+      links.map((link) => {
+        return (
+          <li>
+            {link.name}: <a href={link.url}>{link.linkName}</a>
+          </li>
+        );
+      })
+    }
+  </ul>
+</Layout>

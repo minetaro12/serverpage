@@ -1,0 +1,29 @@
+---
+const navItems = [
+  { href: "/", text: "Home" },
+  { href: "/links/", text: "Links" },
+  { href: "/key/", text: "Key" },
+];
+---
+
+<header>
+  <h1>Welcome to MyPage</h1>
+  <nav>
+    {
+      navItems.map((item) => {
+        if (item.href === Astro.originPathname) {
+          return <span>{item.text}</span>;
+        } else {
+          return <a href={item.href}>{item.text}</a>;
+        }
+      })
+    }
+  </nav>
+</header>
+
+<style>
+  nav {
+    display: flex;
+    gap: 10px;
+  }
+</style>
